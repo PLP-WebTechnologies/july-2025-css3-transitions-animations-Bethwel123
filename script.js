@@ -201,6 +201,3 @@ document.addEventListener('keydown', function(event) {
         handleEmergency();
     }
 });
-
-console.log("Elite Dental Care website initialized successfully!");
-console.log("Assignment components loaded: CSS3 Animations ✓, JavaScript Functions ✓, Integration ✓");

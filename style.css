@@ -15,19 +15,37 @@ body {
 
 /*Header with subtle animations */
 header {
-    background: linear-gradient(135deg, #5BC0EB 0%, #0077B6 100%);
-    color: white;
-    padding: 2rem 0;
     position: relative;
+    padding: 4rem 0;
     overflow: hidden;
+    background: linear-gradient(135deg, #5BC0EB 0%, #0077B6 100%);
+}
+.header-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
 }
 
 /* Subtle floating medical icons */
 .medical-icon {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.1);
-    font-size: 2rem;
-    animation: gentleFloat 8s ease-in-out infinite;
+    color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
 }
 
 .medical-icon:nth-child(1) {
