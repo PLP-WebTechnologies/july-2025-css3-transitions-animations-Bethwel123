@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Dental Care - Premier Dental Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="medical-icon">⚕</div>
+        <div class="medical-icon">🦷</div>
+        <div class="medical-icon">💊</div>
+        <div class="header-content">
+            <h1 class="clinic-name">Elite Dental Care</h1>
+            <p class="clinic-tagline">Advanced Dentistry with Compassionate Care</p>
+            <p class="credentials">Dr. Sarah Johnson, DDS • Board Certified • 15+ Years Experience</p>
+        </div>
+    </header>
+
+    <nav id="mainNav">
+        <div class="nav-container">
+            <div class="logo">Elite Dental</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Dr. Johnson</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#emergency" class="emergency-btn">Emergency: (555) 123-HELP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <img src="images/dental-clinic-interior.jpg" alt="Dental Clinic Interior" class="hero-image">
+            <h2>Your Smile Deserves Expert Care</h2>
+            <p>Experience state-of-the-art dental treatments in a comfortable, professional environment. We're committed to providing exceptional dental care that exceeds your expectations.</p>
+            <button class="btn" onclick="showAppointmentModal()">Schedule Consultation</button>
+            <button class="btn secondary" onclick="showServiceDetails()">View All Services</button>
+        </section>
+
+        <section id="services" class="services">
+            <div class="service-card">
+                <img src="images/general-dentistry.jpg" alt="General Dentistry" class="service-image">
+                <h3>General Dentistry</h3>
+                <p>Comprehensive oral health care including cleanings, fillings, and preventive treatments to maintain your dental health.</p>
+                <div class="service-price">Starting at $150</div>
+                <button class="btn" onclick="bookService('general')">Book Appointment</button>
+            </div>
+
+            <div class="service-card">
+                <img src="images/cosmetic-dentistry.jpg" alt="Cosmetic Dentistry" class="service-image">
+                <h3>Cosmetic Dentistry</h3>
+                <p>Transform your smile with veneers, whitening, and cosmetic procedures designed to enhance your natural beauty.</p>
+                <div class="service-price">Starting at $500</div>
+                <button class="btn" onclick="bookService('cosmetic')">Book Consultation</button>
+            </div>
+
+            <div class="service-card">
+                <img src="images/restorative-dentistry.jpg" alt="Restorative Dentistry" class="service-image">
+                <h3>Restorative Dentistry</h3>
+                <p>Advanced treatments including implants, crowns, and bridges to restore function and aesthetics to your smile.</p>
+                <div class="service-price">Starting at $800</div>
+                <button class="btn" onclick="bookService('restorative')">Schedule Evaluation</button>
+            </div>
+
+            <div class="service-card">
+                <img src="images/orthodontics.jpg" alt="Orthodontics" class="service-image">
+                <h3>Orthodontics</h3>
+                <p>Straighten your teeth with traditional braces or modern clear aligners for a perfectly aligned smile.</p>
+                <div class="service-price">Starting at $3,500</div>
+                <button class="btn" onclick="bookService('orthodontics')">Free Consultation</button>
+            </div>
+
+            <div class="service-card">
+                <img src="images/oral-surgery.jpg" alt="Oral Surgery" class="service-image">
+                <h3>Oral Surgery</h3>
+                <p>Expert surgical procedures including extractions, implant placement, and advanced oral surgery treatments.</p>
+                <div class="service-price">Consultation Required</div>
+                <button class="btn" onclick="bookService('surgery')">Schedule Consultation</button>
+            </div>
+
+            <div class="service-card">
+                <img src="images/emergency-care.jpg" alt="Emergency Care" class="service-image">
+                <h3>Emergency Care</h3>
+                <p>Immediate dental care for urgent situations. We provide same-day appointments for dental emergencies.</p>
+                <div class="service-price">Available 24/7</div>
+                <button class="btn emergency-btn" onclick="handleEmergency()">Emergency Contact</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Interactive Patient Experience Demo</h2>
+            <p>Experience our user-friendly interface with smooth animations and professional interactions</p>
+            
+            <div class="animated-element" id="dentalDemo" onclick="randomAnimation()">
+                Click for Demo
+            </div>
+            
+            <button class="btn" onclick="triggerAnimation('smooth-bounce')">Professional Bounce</button>
+            <button class="btn" onclick="triggerAnimation('professional-rotate')">Smooth Rotation</button>
+            <button class="btn" onclick="triggerAnimation('gentle-pulse')">Gentle Pulse</button>
+            
+            <button class="btn secondary" onclick="togglePatientInfo()">Patient Information</button>
+            <button class="btn secondary" onclick="showLoadingDemo()">Processing Demo</button>
+        </section>
+
+        <section class="demo-section">
+            <h2>Our Technology</h2>
+            <div class="info-card" onclick="flipInfoCard()">
+                <div class="info-card-inner" id="techCard">
+                    <div class="info-card-front">
+                        <img src="images/digital-xray.jpg" alt="Digital X-Ray Technology">
+                        <h3>Digital X-Ray Technology</h3>
+                        <p>Click to learn more</p>
+                    </div>
+                    <div class="info-card-back">
+                        <h3>Advanced Imaging</h3>
+                        <p>90% less radiation than traditional X-rays with instant digital results for accurate diagnosis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Patient Portal Demo</h2>
+            
+            <div class="function-demo">
+                <h3>Appointment Scheduler</h3>
+                <p>Current time: <span id="currentTime"></span></p>
+                <p>Next available slot: <span id="nextSlot"></span></p>
+                <button class="btn" onclick="updateAvailability()">Check Availability</button>
+            </div>
+
+            <div class="function-demo">
+                <h3>Treatment Cost Calculator</h3>
+                <input type="number" id="treatmentInput" placeholder="Number of treatments" class="demo-input">
+                <select id="treatmentType" class="demo-input">
+                    <option value="150">General Cleaning - $150</option>
+                    <option value="500">Cosmetic Treatment - $500</option>
+                    <option value="800">Restorative Work - $800</option>
+                </select>
+                <button class="btn" onclick="calculateTreatmentCost()">Calculate Total</button>
+                <div class="demo-result" id="costResult">Please enter treatment details</div>
+            </div>
+
+            <div class="function-demo">
+                <h3>Insurance Verification</h3>
+                <input type="text" id="insuranceId" placeholder="Insurance ID" class="demo-input">
+                <button class="btn" onclick="verifyInsurance()">Verify Coverage</button>
+                <div class="demo-result" id="insuranceResult">Enter your insurance ID for verification</div>
+            </div>
+        </section>
+
+        <div class="loading" id="loadingDemo">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Processing your request...</div>
+        </div>
+    </main>
+
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal()">&times;</span>
+            <h2>Schedule Your Appointment</h2>
+            <p>Thank you for choosing Elite Dental Care. Our professional staff will contact you within 24 hours to confirm your appointment.</p>
+            <form style="margin-top: 2rem;">
+                <input type="text" placeholder="Full Name" class="demo-input" style="width: 100%; margin: 0.5rem 0;">
+                <input type="email" placeholder="Email Address" class="demo-input" style="width: 100%; margin: 0.5rem 0;">
+                <input type="tel" placeholder="Phone Number" class="demo-input" style="width: 100%; margin: 0.5rem 0;">
+                <select class="demo-input" style="width: 100%; margin: 0.5rem 0;">
+                    <option>Select Preferred Service</option>
+                    <option>General Cleaning</option>
+                    <option>Cosmetic Consultation</option>
+                    <option>Restorative Treatment</option>
+                    <option>Emergency Care</option>
+                </select>
+            </form>
+            <button class="btn" onclick="submitAppointment()">Submit Request</button>
+            <button class="btn secondary" onclick="hideModal()">Cancel</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Elite Dental Care</h3>
+                <p>123 Professional Drive, Suite 200<br>
+                Medical District, State 12345</p>
+                <p>Phone: (555) 123-SMILE<br>
+                Emergency: (555) 123-HELP</p>
+            </div>
+            <div class="footer-column">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 8am - 5pm<br>
+                Saturday: 9am - 2pm<br>
+                Sunday: Emergency Only</p>
+            </div>
+            <div class="footer-column">
+                <img src="images/dental-logo.png" alt="Elite Dental Logo" class="footer-logo">
+            </div>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.8;">
+            &copy; 2024 Elite Dental Care. All rights reserved. | Licensed & Insured
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
